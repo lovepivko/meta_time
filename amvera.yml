@@ -6,6 +6,8 @@ meta:
 
 build:
   requirementsPath: requirements.txt
+  useCache: true
+
 
 run:
   scriptName: main.py
