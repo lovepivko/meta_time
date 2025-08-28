@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: mtfl-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: MTFL_MERCHANT_ID
+        sync: false
+      - key: MTFL_TOKEN
+        sync: false
+
+
+
+
+
+
+
+
+
+
+
+
