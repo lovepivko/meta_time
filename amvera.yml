@@ -1,17 +1,26 @@
-services:
-  - type: web
-    name: mtfl-bot
-    env: python
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python main.py
-    envVars:
-      - key: BOT_TOKEN
-        sync: false
-      - key: MTFL_MERCHANT_ID
-        sync: false
-      - key: MTFL_TOKEN
-        sync: false
+meta:
+  environment: python
+  toolchain:
+    name: pip
+    version: 3.10
+
+build:
+  requirementsPath: requirements.txt
+
+run:
+  scriptName: main.py
+  containerPort: 10000
+  # persistenceMount: /data  # добавь при необходимости постоянного хранения
+
+env:
+  BOT_TOKEN: ${BOT_TOKEN}
+  MTFL_MERCHANT_ID: ${MTFL_MERCHANT_ID}
+  MTFL_TOKEN: ${MTFL_TOKEN}
+
+# Горизонтальное масштабирование (опционально)
+scale:
+  instances:
+    count: 1
 
 
 
