@@ -1,37 +1,13 @@
+version: null
 meta:
   environment: python
   toolchain:
     name: pip
-    version: 3.10
-
+    version: "3.11"
 build:
-  requirementsPath: requirements.txt
+  requirementsPath: meta_time/requirements.txt
   useCache: true
-
-
 run:
-  scriptName: main.py
-  containerPort: 10000
-  # persistenceMount: /data  # добавь при необходимости постоянного хранения
-
-env:
-  BOT_TOKEN: ${BOT_TOKEN}
-  MTFL_MERCHANT_ID: ${MTFL_MERCHANT_ID}
-  MTFL_TOKEN: ${MTFL_TOKEN}
-
-# Горизонтальное масштабирование (опционально)
-scale:
-  instances:
-    count: 1
-
-
-
-
-
-
-
-
-
-
-
-
+  scriptName: meta_time/app228.py
+  persistenceMount: /data
+  containerPort: 80

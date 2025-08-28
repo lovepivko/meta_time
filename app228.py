@@ -17,7 +17,7 @@ bot = telebot.TeleBot(TOKEN)
 app = Flask(__name__)
 
 # --- Установка webhook ---
-WEBHOOK_URL = f"https://example-meta.onrender.com/{TOKEN}"
+WEBHOOK_URL = f"https://amvera-lovepivko-run-metatime/{TOKEN}"
 set_hook = requests.post(
     f"https://api.telegram.org/bot{TOKEN}/setWebhook",
     json={"url": WEBHOOK_URL}
